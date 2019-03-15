@@ -141,8 +141,9 @@ public class Robot {
             this can be fixed but it's late and im tiiiiired
 
          */
-        for(int i=0; i<gridMax; i++){
-            for(int j=0; j<gridMax; j++){
+
+        for(int j=gridMax; j>0; j--){
+            for(int i=0; i<gridMax; i++){
                 boolean isSeen = false;
                 boolean last = false;
                 //the list numbers come in pairs of three, so we itterate...
@@ -228,7 +229,7 @@ public class Robot {
         System.out.println(XMax + ", " +XMin + ", " + YMax +", " +YMin);
         System.out.println("max x: " + gridx + " max y: " + gridy);
 
-        while(xPosition != x && yPosition != y){
+        while(xPosition != x || yPosition != y){
 
             //we do an x move
             if(xPosition > x ){
@@ -251,7 +252,7 @@ public class Robot {
                 track.add(1);// direction
             }
             if(yPosition > y){
-                xPosition--;
+                yPosition--;
                 track.add(xPosition);// x
                 track.add(yPosition);// y
                 track.add(1);// direction
@@ -260,8 +261,11 @@ public class Robot {
 
         }
 
-        for(int i = 0; i < gridMax; i++){
-            for(int j = 0; j < gridMax; j++){
+        //the y
+        for(int j = gridMax; j > 0; j--){
+
+            //the x
+            for(int i = 0; i < gridMax; i++){
                 boolean isSeen = false;
                 boolean last = false;
                 //the list numbers come in pairs of three, so we itterate...

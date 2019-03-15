@@ -10,11 +10,11 @@ public class test1 {
 
     public static void main(String args[]){
         Robot boston = new Robot();
-        String direction = boston.Robot("LFFRFFLLFFLFFRF");
+        String direction = boston.Robot("FFLFFRRRFFF");
 
         System.out.println(direction);
 
-        boston.robot(5,4);
+        boston.robot(5,2);
     }
     
 }
