@@ -13,6 +13,8 @@ public class test1 {
         String direction = boston.Robot("LFFRFFLLFFLFFRF");
 
         System.out.println(direction);
+
+        boston.robot(5,4);
     }
     
 }
