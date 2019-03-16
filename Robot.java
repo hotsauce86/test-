@@ -146,6 +146,7 @@ public class Robot {
             for(int i=0; i<gridMax; i++){
                 boolean isSeen = false;
                 boolean last = false;
+                boolean up = false;
                 //the list numbers come in pairs of three, so we itterate...
                 for(int k=0; k<track.size(); k= k+3){
                     if(i==track.get(k)+gridMax/2 && j==track.get(k+1)+gridMax/2){
@@ -155,13 +156,22 @@ public class Robot {
                         if(k==track.size()-3 && isSeen==true){
                             last=true;
                         }
+
+                        if(track.get(k+2)==1 ||track.get(k+2)==3){
+                            up = true;
+                        }
                     }
                 }
                 if(last==true && isSeen==true){
                     System.out.print(4+" ");
                 }
                 else if(isSeen==true){
-                    System.out.print(1+" ");
+                    if(up == true){
+                        System.out.print("| ");
+                    }else{
+                        System.out.print("- ");
+                    }
+                    //System.out.print(1+" ");
                 }
                 else if(i==gridMax/2 && j==gridMax/2){
                     System.out.print(4);
@@ -217,7 +227,6 @@ public class Robot {
             YMin = y;
         }
 
-
         int gridx = XMax-XMin;
         int gridy = YMax-YMin;
         int gridMax = 0;
@@ -244,7 +253,6 @@ public class Robot {
                 track.add(yPosition);// y
                 track.add(1);// direction
             }
-
             if(yPosition < y ){
                 yPosition++;
                 track.add(xPosition);// x
@@ -257,18 +265,16 @@ public class Robot {
                 track.add(yPosition);// y
                 track.add(1);// direction
             }
-
-
         }
 
         //the y
         for(int j = gridMax; j > 0; j--){
-
             //the x
             for(int i = 0; i < gridMax; i++){
                 boolean isSeen = false;
                 boolean last = false;
-                //the list numbers come in pairs of three, so we itterate...
+                boolean up = false;
+                //the list numbers come in pairs of three, so we iterate...
                 for(int k=0; k<track.size(); k= k+3){
                     if(i==track.get(k)+gridMax/2 && j==track.get(k+1)+gridMax/2){
                         isSeen=true;
@@ -277,13 +283,21 @@ public class Robot {
                         if(k==track.size()-3 && isSeen==true){
                             last=true;
                         }
+                        if(track.get(k+2)==1 ||track.get(k+2)==3){
+                            up = true;
+                        }
                     }
                 }
                 if(last==true && isSeen==true){
                     System.out.print(4+" ");
                 }
                 else if(isSeen==true){
-                    System.out.print(1+" ");
+                    if(up==true){
+                        System.out.print("| ");
+                    }else{
+                        System.out.print("-");
+                    }
+                    //System.out.print(1+" ");
                 }
                 else if(i==gridMax/2 && j==gridMax/2){
                     System.out.print(4);
