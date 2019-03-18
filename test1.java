@@ -16,7 +16,7 @@ public class test1 {
 
 
     public static int changeDate(dateandtime somedate1, dateandtime somedate2){
-        if(somedate1.getDay() <= somedate2.getDay()){
+        if((somedate1.getDay() <= somedate2.getDay()) && (somedate1.getMonth() == somedate2.getMonth())){
             somedate1.setDay(somedate1.getDay()+1);
             return changeDate(somedate1, somedate2);
         }else {
@@ -33,16 +33,11 @@ public class test1 {
 
         boston.robot(1,1);
         dateandtime billdate1 = new dateandtime(1,1,6);
-        dateandtime billdate2 = new dateandtime(3,1,6);
+        dateandtime billdate2 = new dateandtime(30,1,6);
         billdate1.setDay(1);
-
-
-
-
 
         billdate1.getDate();
         billdate2.getDate();
-
 
         changeDate(billdate1, billdate2);
         billdate1.getDate();

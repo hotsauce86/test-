@@ -18,10 +18,24 @@ public class dateandtime {
 
     public void setMonth(int month) {
         this.month = month;
+        if(month >12){
+            setYear(getYear()+1);
+            this.month=1;
+        }
     }
 
     public void setDay(int day) {
-        this.day = day;
+
+
+        if(day>30){
+            this.day = 1;
+            setMonth(getMonth()+1);
+        }else{
+            this.day = day;
+        }
+
+        System.out.println("chaning day: "+day);
+
     }
 
     public void setYear(int year) {
