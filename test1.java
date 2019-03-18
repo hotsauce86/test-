@@ -7,9 +7,24 @@ public class test1 {
         return a*b;
     }
 
+
     Robot rover = new Robot();
     public String direction = rover.Robot("LFFRFFLLFFLFFRF");
-    public static dateandtime billdate2 = new dateandtime();
+
+
+
+
+
+    public static int changeDate(dateandtime somedate1, dateandtime somedate2){
+        if(somedate1.getDay() <= somedate2.getDay()){
+            somedate1.setDay(somedate1.getDay()+1);
+            return changeDate(somedate1, somedate2);
+        }else {
+            return somedate1.getDay();
+        }
+    }
+
+
     public static void main(String args[]){
         Robot boston = new Robot();
         String direction = boston.Robot("FFLFFRFF");
@@ -17,25 +32,26 @@ public class test1 {
         System.out.println(direction);
 
         boston.robot(1,1);
+        dateandtime billdate1 = new dateandtime(1,1,6);
+        dateandtime billdate2 = new dateandtime(3,1,6);
+        billdate1.setDay(1);
 
 
-        dateandtime billdate = new dateandtime();
-
-        billdate.setDate(1,1,1999);
-        billdate2.setDate(1,1,1999);
-
-        checkBilling(billdate);
-        billdate.getDate();
 
 
+
+        billdate1.getDate();
+        billdate2.getDate();
+
+
+        changeDate(billdate1, billdate2);
+        billdate1.getDate();
 
 
     }
 
-    public static  void checkBilling(dateandtime billdate){
-        if(billdate.getDay() == billdate2.getDay()){
-            billdate.setDay(billdate.getDay()+1);
-        }
-    }
+
+
+
     
 }
