@@ -24,6 +24,32 @@ public class test1 {
         }
     }
 
+    public int SmalledtPos(int[] A) {
+        // write your code in Java SE 8
+
+        int smallestpos =1;
+
+        for(int i =0; i < A.length; i ++){
+            if(A[i]==smallestpos){
+                smallestpos++;
+                i=0;
+            }
+        }
+
+        return smallestpos;
+    }
+
+
+    public int BinaryToInt(String binary){
+
+
+        //int foo = Integer.parseInt("1001", 2);
+        int foo = Integer.parseInt(binary, 2);
+        System.out.println(foo);
+
+        return foo;
+    }
+
 
     public static void main(String args[]){
         Robot boston = new Robot();
