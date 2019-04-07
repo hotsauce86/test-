@@ -16,7 +16,10 @@ public class test1 {
 
 
     public static int changeDate(dateandtime somedate1, dateandtime somedate2){
-        if((somedate1.getDay() <= somedate2.getDay()) && (somedate1.getMonth() == somedate2.getMonth())){
+        if(somedate1.getMonth() < somedate2.getMonth()){
+            somedate1.setMonth(somedate1.getMonth()+1);
+        }
+        if((somedate1.getDay() < somedate2.getDay()) && (somedate1.getMonth() == somedate2.getMonth())){
             somedate1.setDay(somedate1.getDay()+1);
             return changeDate(somedate1, somedate2);
         }else {
@@ -40,7 +43,7 @@ public class test1 {
     }
 
 
-    public int BinaryToInt(String binary){
+    public static int BinaryToInt(String binary){
 
 
         //int foo = Integer.parseInt("1001", 2);
@@ -67,7 +70,7 @@ public class test1 {
 
         changeDate(billdate1, billdate2);
         billdate1.getDate();
-
+        BinaryToInt("0010001110");
 
     }
 
