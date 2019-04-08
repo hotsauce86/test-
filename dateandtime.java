@@ -48,7 +48,7 @@ public class dateandtime {
         this.year = year;
     }
     public void getDate(){
-        System.out.println(day+" :"+month+" :"+year);
+        System.out.print("Day " +day+" : Month"+month+" : Year "+year);
     }
 }
 
